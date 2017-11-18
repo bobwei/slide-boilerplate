@@ -8,7 +8,7 @@ const config = {
     ...(process.env.NODE_ENV === 'production'
       ? []
       : ['webpack-dev-server/client?http://localhost:8080']),
-    './src/modules/presentation/index.js',
+    './src/modules/slide/index.js',
   ],
   output: {
     path: path.join(__dirname, 'build'),
@@ -18,9 +18,9 @@ const config = {
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     }),
-    new CopyWebpackPlugin([{ from: 'src/modules/presentation' }]),
+    new CopyWebpackPlugin([{ from: 'src/modules/slide' }]),
     new HtmlWebpackPlugin({
-      template: './src/modules/presentation/index.html',
+      template: './src/modules/slide/index.html',
     }),
     ...(process.env.NODE_ENV === 'production'
       ? [
