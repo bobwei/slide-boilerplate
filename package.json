@@ -1,0 +1,68 @@
+{
+  "name": "js-app-boilerplate",
+  "version": "1.2.5",
+  "description": "",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "yarn clean && NODE_ENV=production webpack",
+    "deploy": "gh-pages -d build",
+    "clean": "rimraf build",
+    "precommit": "lint-staged --verbose",
+    "format": "prettier --single-quote --trailing-comma all '{src,__{tests,mocks}__}/**/*.{js,jsx}' --write",
+    "test": "jest --onlyChanged --watch",
+    "test:all": "jest",
+    "lint-staged": "lint-staged --verbose",
+    "flow": "flow"
+  },
+  "author": "bob61016@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "copy-webpack-plugin": "^4.2.0",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-import-resolver-babel-module": "^3.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "v5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "flow-bin": "^0.56.0",
+    "flow-typed": "^2.1.5",
+    "gh-pages": "^1.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "husky": "^0.14.3",
+    "jest": "^21.2.1",
+    "lint-staged": "^4.0.2",
+    "nodemon": "^1.11.0",
+    "prettier": "^1.5.3",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.6.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "jquery": "^3.2.1",
+    "ramda": "^0.24.1"
+  },
+  "jest": {
+    "verbose": true,
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/env-setup.js",
+      "<rootDir>/node_modules/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/__tests__/env-setup.js"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "yarn run format",
+      "git add"
+    ]
+  }
+}

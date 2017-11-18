@@ -1,0 +1,31 @@
+/*@font-face {
+  font-family: 'FiraCode';
+  src: url('assets/FiraCode-Regular.woff2') format('woff2'),
+    url('assets/FiraCode-Regular.woff') format('woff');
+}
+
+.reveal pre code {
+  font-family: 'FiraCode';
+}*/
+
+.reveal pre code {
+  padding: 15px;
+  line-height: 1.35em;
+}
+
+img.large {
+  height: 16em;
+}
+
+.reveal pre code {
+  font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+}
+
+.reveal ul ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.line-through {
+  text-decoration: line-through;
+}

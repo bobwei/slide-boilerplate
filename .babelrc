@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "flow",
+    "latest"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "modules": "./src"
+      }
+    }],
+    "transform-object-rest-spread"
+  ]
+}
